@@ -1,3 +1,6 @@
 *.pyc
 *.pyo
+*.py.swo
+*.py.swp
+*.pys
 local_settings.py
