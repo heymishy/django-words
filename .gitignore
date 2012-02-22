@@ -3,4 +3,5 @@
 *.py.swo
 *.py.swp
 *.pys
+*.swp
 local_settings.py

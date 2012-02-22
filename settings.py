@@ -98,6 +98,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'mysite.urls'
@@ -124,7 +125,27 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     # 'polls',
     'words',
+    'debug_toolbar',
+    'debug_toolbar_mongo'
 )
+
+# Set this to localhost if developing locally
+# If not developing locally, add your remote IP..
+INTERNAL_IPS = ('127.0.0.1')
+
+# Various apps available
+DEBUG_TOOLBAR_PANELS = (
+    'debug_toolbar.panels.version.VersionDebugPanel',
+    'debug_toolbar.panels.timer.TimerDebugPanel',
+    'debug_toolbar.panels.headers.HeaderDebugPanel',
+    'debug_toolbar.panels.request_vars.RequestVarsDebugPanel',
+    'debug_toolbar.panels.sql.SQLDebugPanel',
+    'debug_toolbar_mongo.panel.MongoDebugPanel',
+    'debug_toolbar.panels.cache.CacheDebugPanel',
+    'debug_toolbar.panels.logger.LoggingPanel',
+)
+
+
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
